@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/graphicseditordecl.dir/main.cpp.o CMakeFiles/graphicseditordecl.dir/editor.cpp.o CMakeFiles/graphicseditordecl.dir/ellipse.cpp.o CMakeFiles/graphicseditordecl.dir/graphicsitem.cpp.o CMakeFiles/graphicseditordecl.dir/gui.cpp.o CMakeFiles/graphicseditordecl.dir/line.cpp.o -o graphicseditordecl 

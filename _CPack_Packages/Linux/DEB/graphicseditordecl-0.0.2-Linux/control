@@ -1,0 +1,9 @@
+Architecture: amd64
+Description: graphicseditordecl built using CMake
+Maintainer: example@example.com
+Package: graphicseditordecl
+Priority: optional
+Section: devel
+Version: 0.0.2
+Installed-Size: 31
+
