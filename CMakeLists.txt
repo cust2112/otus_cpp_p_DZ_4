@@ -3,28 +3,47 @@ cmake_minimum_required(VERSION 3.2)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VESRION 0.0.${PATCH_VERSION})
 
-project(graphicseditordecl VERSION ${PROJECT_VESRION})
+project(graphicseditordemo VERSION ${PROJECT_VESRION})
 
-add_executable(graphicseditordecl main.cpp editor.cpp
-        ellipse.cpp graphicsitem.cpp gui.cpp line.cpp)
+add_executable(graphicseditordemo
+    common/point.cpp
+    common/rect.cpp
+    common/utils.cpp
+    editor/editor.cpp
+    editor/ellipse.cpp
+    editor/graphicsitem.cpp
+    editor/line.cpp
+    editor/selectablegraphicsitem.cpp
+    editor/serializablegraphicsitem.cpp
+    gui/gui.cpp
+    gui/textmodeui/textmodecanvas.cpp
+    gui/textmodeui/textmodeui.cpp
+    main.cpp
+    serialize/documentreader.cpp
+    serialize/documentwriter.cpp
+    serialize/serializerfactory.cpp
+    serialize/simpleserializer/simpledocumentreader.cpp
+    serialize/simpleserializer/simpledocumentwriter.cpp
+    serialize/simpleserializer/simpleserializerfactory.cpp
+)
 
-set_target_properties(graphicseditordecl PROPERTIES
+set_target_properties(graphicseditordemo PROPERTIES
     CXX_STANDARD 11
     CXX_STANDARD_REQUIRED ON
 )
 
 if (MSVC)
-    target_compile_options(graphicseditordecl PRIVATE
+    target_compile_options(graphicseditordemo PRIVATE
         /W4
     )
 else ()
-    target_compile_options(graphicseditordecl PRIVATE
+    target_compile_options(graphicseditordemo PRIVATE
         -Wall -Wextra -pedantic -Werror
     )
 endif()
 
 
-install(TARGETS graphicseditordecl RUNTIME DESTINATION bin)
+install(TARGETS graphicseditordemo RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
