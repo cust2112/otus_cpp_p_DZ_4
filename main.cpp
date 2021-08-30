@@ -1,16 +1,15 @@
 
-#include "editor.h"
-#include "gui.h"
+#include "common/utils.h"
+#include "editor/editor.h"
+#include "gui/textmodeui/textmodeui.h"
 
 
 int main ()
 {
-    Gui gui;
-    Editor editor (gui);
-
+    TextModeUI gui;
+    Editor editor (gui);  USED_IMPLICITLY (editor);
 
     gui.startEventLoop ();
-
 
     return 0;
 }

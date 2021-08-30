@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/graphicseditordecl.dir/all
+all: CMakeFiles/graphicseditordemo.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/graphicseditordecl.dir/clean
+clean: CMakeFiles/graphicseditordemo.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/graphicseditordecl.dir
+# Target rules for target CMakeFiles/graphicseditordemo.dir
 
 # All Build rule for target.
-CMakeFiles/graphicseditordecl.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target graphicseditordecl"
-.PHONY : CMakeFiles/graphicseditordecl.dir/all
+CMakeFiles/graphicseditordemo.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target graphicseditordemo"
+.PHONY : CMakeFiles/graphicseditordemo.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/graphicseditordecl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/graphicseditordecl.dir/all
+CMakeFiles/graphicseditordemo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles 20
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/graphicseditordemo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles 0
-.PHONY : CMakeFiles/graphicseditordecl.dir/rule
+.PHONY : CMakeFiles/graphicseditordemo.dir/rule
 
 # Convenience name for target.
-graphicseditordecl: CMakeFiles/graphicseditordecl.dir/rule
-.PHONY : graphicseditordecl
+graphicseditordemo: CMakeFiles/graphicseditordemo.dir/rule
+.PHONY : graphicseditordemo
 
 # clean rule for target.
-CMakeFiles/graphicseditordecl.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/clean
-.PHONY : CMakeFiles/graphicseditordecl.dir/clean
+CMakeFiles/graphicseditordemo.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/clean
+.PHONY : CMakeFiles/graphicseditordemo.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

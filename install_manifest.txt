@@ -1,1 +1,1 @@
-/usr/bin/graphicseditordecl
+/usr/bin/graphicseditordemo

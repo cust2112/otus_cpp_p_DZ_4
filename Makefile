@@ -120,6 +120,16 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/usr/local/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
+
+# Special rule for the target package
+package/fast: package
+.PHONY : package/fast
+
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
@@ -139,16 +149,6 @@ edit_cache:
 # Special rule for the target edit_cache
 edit_cache/fast: edit_cache
 .PHONY : edit_cache/fast
-
-# Special rule for the target package
-package: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	/usr/local/bin/cpack --config ./CPackConfig.cmake
-.PHONY : package
-
-# Special rule for the target package
-package/fast: package
-.PHONY : package/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -182,144 +182,312 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named graphicseditordecl
+# Target rules for targets named graphicseditordemo
 
 # Build rule for target.
-graphicseditordecl: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 graphicseditordecl
-.PHONY : graphicseditordecl
+graphicseditordemo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 graphicseditordemo
+.PHONY : graphicseditordemo
 
 # fast build rule for target.
-graphicseditordecl/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/build
-.PHONY : graphicseditordecl/fast
+graphicseditordemo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/build
+.PHONY : graphicseditordemo/fast
 
-editor.o: editor.cpp.o
-.PHONY : editor.o
-
-# target to build an object file
-editor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/editor.cpp.o
-.PHONY : editor.cpp.o
-
-editor.i: editor.cpp.i
-.PHONY : editor.i
-
-# target to preprocess a source file
-editor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/editor.cpp.i
-.PHONY : editor.cpp.i
-
-editor.s: editor.cpp.s
-.PHONY : editor.s
-
-# target to generate assembly for a file
-editor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/editor.cpp.s
-.PHONY : editor.cpp.s
-
-ellipse.o: ellipse.cpp.o
-.PHONY : ellipse.o
+common/point.o: common/point.cpp.o
+.PHONY : common/point.o
 
 # target to build an object file
-ellipse.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/ellipse.cpp.o
-.PHONY : ellipse.cpp.o
+common/point.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/point.cpp.o
+.PHONY : common/point.cpp.o
 
-ellipse.i: ellipse.cpp.i
-.PHONY : ellipse.i
+common/point.i: common/point.cpp.i
+.PHONY : common/point.i
 
 # target to preprocess a source file
-ellipse.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/ellipse.cpp.i
-.PHONY : ellipse.cpp.i
+common/point.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/point.cpp.i
+.PHONY : common/point.cpp.i
 
-ellipse.s: ellipse.cpp.s
-.PHONY : ellipse.s
+common/point.s: common/point.cpp.s
+.PHONY : common/point.s
 
 # target to generate assembly for a file
-ellipse.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/ellipse.cpp.s
-.PHONY : ellipse.cpp.s
+common/point.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/point.cpp.s
+.PHONY : common/point.cpp.s
 
-graphicsitem.o: graphicsitem.cpp.o
-.PHONY : graphicsitem.o
+common/rect.o: common/rect.cpp.o
+.PHONY : common/rect.o
 
 # target to build an object file
-graphicsitem.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/graphicsitem.cpp.o
-.PHONY : graphicsitem.cpp.o
+common/rect.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/rect.cpp.o
+.PHONY : common/rect.cpp.o
 
-graphicsitem.i: graphicsitem.cpp.i
-.PHONY : graphicsitem.i
+common/rect.i: common/rect.cpp.i
+.PHONY : common/rect.i
 
 # target to preprocess a source file
-graphicsitem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/graphicsitem.cpp.i
-.PHONY : graphicsitem.cpp.i
+common/rect.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/rect.cpp.i
+.PHONY : common/rect.cpp.i
 
-graphicsitem.s: graphicsitem.cpp.s
-.PHONY : graphicsitem.s
+common/rect.s: common/rect.cpp.s
+.PHONY : common/rect.s
 
 # target to generate assembly for a file
-graphicsitem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/graphicsitem.cpp.s
-.PHONY : graphicsitem.cpp.s
+common/rect.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/rect.cpp.s
+.PHONY : common/rect.cpp.s
 
-gui.o: gui.cpp.o
-.PHONY : gui.o
+common/utils.o: common/utils.cpp.o
+.PHONY : common/utils.o
 
 # target to build an object file
-gui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/gui.cpp.o
-.PHONY : gui.cpp.o
+common/utils.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/utils.cpp.o
+.PHONY : common/utils.cpp.o
 
-gui.i: gui.cpp.i
-.PHONY : gui.i
+common/utils.i: common/utils.cpp.i
+.PHONY : common/utils.i
 
 # target to preprocess a source file
-gui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/gui.cpp.i
-.PHONY : gui.cpp.i
+common/utils.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/utils.cpp.i
+.PHONY : common/utils.cpp.i
 
-gui.s: gui.cpp.s
-.PHONY : gui.s
+common/utils.s: common/utils.cpp.s
+.PHONY : common/utils.s
 
 # target to generate assembly for a file
-gui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/gui.cpp.s
-.PHONY : gui.cpp.s
+common/utils.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/common/utils.cpp.s
+.PHONY : common/utils.cpp.s
 
-line.o: line.cpp.o
-.PHONY : line.o
+editor/editor.o: editor/editor.cpp.o
+.PHONY : editor/editor.o
 
 # target to build an object file
-line.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/line.cpp.o
-.PHONY : line.cpp.o
+editor/editor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/editor.cpp.o
+.PHONY : editor/editor.cpp.o
 
-line.i: line.cpp.i
-.PHONY : line.i
+editor/editor.i: editor/editor.cpp.i
+.PHONY : editor/editor.i
 
 # target to preprocess a source file
-line.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/line.cpp.i
-.PHONY : line.cpp.i
+editor/editor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/editor.cpp.i
+.PHONY : editor/editor.cpp.i
 
-line.s: line.cpp.s
-.PHONY : line.s
+editor/editor.s: editor/editor.cpp.s
+.PHONY : editor/editor.s
 
 # target to generate assembly for a file
-line.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/line.cpp.s
-.PHONY : line.cpp.s
+editor/editor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/editor.cpp.s
+.PHONY : editor/editor.cpp.s
+
+editor/ellipse.o: editor/ellipse.cpp.o
+.PHONY : editor/ellipse.o
+
+# target to build an object file
+editor/ellipse.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/ellipse.cpp.o
+.PHONY : editor/ellipse.cpp.o
+
+editor/ellipse.i: editor/ellipse.cpp.i
+.PHONY : editor/ellipse.i
+
+# target to preprocess a source file
+editor/ellipse.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/ellipse.cpp.i
+.PHONY : editor/ellipse.cpp.i
+
+editor/ellipse.s: editor/ellipse.cpp.s
+.PHONY : editor/ellipse.s
+
+# target to generate assembly for a file
+editor/ellipse.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/ellipse.cpp.s
+.PHONY : editor/ellipse.cpp.s
+
+editor/graphicsitem.o: editor/graphicsitem.cpp.o
+.PHONY : editor/graphicsitem.o
+
+# target to build an object file
+editor/graphicsitem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/graphicsitem.cpp.o
+.PHONY : editor/graphicsitem.cpp.o
+
+editor/graphicsitem.i: editor/graphicsitem.cpp.i
+.PHONY : editor/graphicsitem.i
+
+# target to preprocess a source file
+editor/graphicsitem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/graphicsitem.cpp.i
+.PHONY : editor/graphicsitem.cpp.i
+
+editor/graphicsitem.s: editor/graphicsitem.cpp.s
+.PHONY : editor/graphicsitem.s
+
+# target to generate assembly for a file
+editor/graphicsitem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/graphicsitem.cpp.s
+.PHONY : editor/graphicsitem.cpp.s
+
+editor/line.o: editor/line.cpp.o
+.PHONY : editor/line.o
+
+# target to build an object file
+editor/line.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/line.cpp.o
+.PHONY : editor/line.cpp.o
+
+editor/line.i: editor/line.cpp.i
+.PHONY : editor/line.i
+
+# target to preprocess a source file
+editor/line.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/line.cpp.i
+.PHONY : editor/line.cpp.i
+
+editor/line.s: editor/line.cpp.s
+.PHONY : editor/line.s
+
+# target to generate assembly for a file
+editor/line.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/line.cpp.s
+.PHONY : editor/line.cpp.s
+
+editor/selectablegraphicsitem.o: editor/selectablegraphicsitem.cpp.o
+.PHONY : editor/selectablegraphicsitem.o
+
+# target to build an object file
+editor/selectablegraphicsitem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/selectablegraphicsitem.cpp.o
+.PHONY : editor/selectablegraphicsitem.cpp.o
+
+editor/selectablegraphicsitem.i: editor/selectablegraphicsitem.cpp.i
+.PHONY : editor/selectablegraphicsitem.i
+
+# target to preprocess a source file
+editor/selectablegraphicsitem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/selectablegraphicsitem.cpp.i
+.PHONY : editor/selectablegraphicsitem.cpp.i
+
+editor/selectablegraphicsitem.s: editor/selectablegraphicsitem.cpp.s
+.PHONY : editor/selectablegraphicsitem.s
+
+# target to generate assembly for a file
+editor/selectablegraphicsitem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/selectablegraphicsitem.cpp.s
+.PHONY : editor/selectablegraphicsitem.cpp.s
+
+editor/serializablegraphicsitem.o: editor/serializablegraphicsitem.cpp.o
+.PHONY : editor/serializablegraphicsitem.o
+
+# target to build an object file
+editor/serializablegraphicsitem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/serializablegraphicsitem.cpp.o
+.PHONY : editor/serializablegraphicsitem.cpp.o
+
+editor/serializablegraphicsitem.i: editor/serializablegraphicsitem.cpp.i
+.PHONY : editor/serializablegraphicsitem.i
+
+# target to preprocess a source file
+editor/serializablegraphicsitem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/serializablegraphicsitem.cpp.i
+.PHONY : editor/serializablegraphicsitem.cpp.i
+
+editor/serializablegraphicsitem.s: editor/serializablegraphicsitem.cpp.s
+.PHONY : editor/serializablegraphicsitem.s
+
+# target to generate assembly for a file
+editor/serializablegraphicsitem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/editor/serializablegraphicsitem.cpp.s
+.PHONY : editor/serializablegraphicsitem.cpp.s
+
+gui/gui.o: gui/gui.cpp.o
+.PHONY : gui/gui.o
+
+# target to build an object file
+gui/gui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/gui.cpp.o
+.PHONY : gui/gui.cpp.o
+
+gui/gui.i: gui/gui.cpp.i
+.PHONY : gui/gui.i
+
+# target to preprocess a source file
+gui/gui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/gui.cpp.i
+.PHONY : gui/gui.cpp.i
+
+gui/gui.s: gui/gui.cpp.s
+.PHONY : gui/gui.s
+
+# target to generate assembly for a file
+gui/gui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/gui.cpp.s
+.PHONY : gui/gui.cpp.s
+
+gui/textmodeui/textmodecanvas.o: gui/textmodeui/textmodecanvas.cpp.o
+.PHONY : gui/textmodeui/textmodecanvas.o
+
+# target to build an object file
+gui/textmodeui/textmodecanvas.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/textmodeui/textmodecanvas.cpp.o
+.PHONY : gui/textmodeui/textmodecanvas.cpp.o
+
+gui/textmodeui/textmodecanvas.i: gui/textmodeui/textmodecanvas.cpp.i
+.PHONY : gui/textmodeui/textmodecanvas.i
+
+# target to preprocess a source file
+gui/textmodeui/textmodecanvas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/textmodeui/textmodecanvas.cpp.i
+.PHONY : gui/textmodeui/textmodecanvas.cpp.i
+
+gui/textmodeui/textmodecanvas.s: gui/textmodeui/textmodecanvas.cpp.s
+.PHONY : gui/textmodeui/textmodecanvas.s
+
+# target to generate assembly for a file
+gui/textmodeui/textmodecanvas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/textmodeui/textmodecanvas.cpp.s
+.PHONY : gui/textmodeui/textmodecanvas.cpp.s
+
+gui/textmodeui/textmodeui.o: gui/textmodeui/textmodeui.cpp.o
+.PHONY : gui/textmodeui/textmodeui.o
+
+# target to build an object file
+gui/textmodeui/textmodeui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/textmodeui/textmodeui.cpp.o
+.PHONY : gui/textmodeui/textmodeui.cpp.o
+
+gui/textmodeui/textmodeui.i: gui/textmodeui/textmodeui.cpp.i
+.PHONY : gui/textmodeui/textmodeui.i
+
+# target to preprocess a source file
+gui/textmodeui/textmodeui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/textmodeui/textmodeui.cpp.i
+.PHONY : gui/textmodeui/textmodeui.cpp.i
+
+gui/textmodeui/textmodeui.s: gui/textmodeui/textmodeui.cpp.s
+.PHONY : gui/textmodeui/textmodeui.s
+
+# target to generate assembly for a file
+gui/textmodeui/textmodeui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/gui/textmodeui/textmodeui.cpp.s
+.PHONY : gui/textmodeui/textmodeui.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -327,7 +495,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -335,8 +503,152 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordecl.dir/build.make CMakeFiles/graphicseditordecl.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+serialize/documentreader.o: serialize/documentreader.cpp.o
+.PHONY : serialize/documentreader.o
+
+# target to build an object file
+serialize/documentreader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/documentreader.cpp.o
+.PHONY : serialize/documentreader.cpp.o
+
+serialize/documentreader.i: serialize/documentreader.cpp.i
+.PHONY : serialize/documentreader.i
+
+# target to preprocess a source file
+serialize/documentreader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/documentreader.cpp.i
+.PHONY : serialize/documentreader.cpp.i
+
+serialize/documentreader.s: serialize/documentreader.cpp.s
+.PHONY : serialize/documentreader.s
+
+# target to generate assembly for a file
+serialize/documentreader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/documentreader.cpp.s
+.PHONY : serialize/documentreader.cpp.s
+
+serialize/documentwriter.o: serialize/documentwriter.cpp.o
+.PHONY : serialize/documentwriter.o
+
+# target to build an object file
+serialize/documentwriter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/documentwriter.cpp.o
+.PHONY : serialize/documentwriter.cpp.o
+
+serialize/documentwriter.i: serialize/documentwriter.cpp.i
+.PHONY : serialize/documentwriter.i
+
+# target to preprocess a source file
+serialize/documentwriter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/documentwriter.cpp.i
+.PHONY : serialize/documentwriter.cpp.i
+
+serialize/documentwriter.s: serialize/documentwriter.cpp.s
+.PHONY : serialize/documentwriter.s
+
+# target to generate assembly for a file
+serialize/documentwriter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/documentwriter.cpp.s
+.PHONY : serialize/documentwriter.cpp.s
+
+serialize/serializerfactory.o: serialize/serializerfactory.cpp.o
+.PHONY : serialize/serializerfactory.o
+
+# target to build an object file
+serialize/serializerfactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/serializerfactory.cpp.o
+.PHONY : serialize/serializerfactory.cpp.o
+
+serialize/serializerfactory.i: serialize/serializerfactory.cpp.i
+.PHONY : serialize/serializerfactory.i
+
+# target to preprocess a source file
+serialize/serializerfactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/serializerfactory.cpp.i
+.PHONY : serialize/serializerfactory.cpp.i
+
+serialize/serializerfactory.s: serialize/serializerfactory.cpp.s
+.PHONY : serialize/serializerfactory.s
+
+# target to generate assembly for a file
+serialize/serializerfactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/serializerfactory.cpp.s
+.PHONY : serialize/serializerfactory.cpp.s
+
+serialize/simpleserializer/simpledocumentreader.o: serialize/simpleserializer/simpledocumentreader.cpp.o
+.PHONY : serialize/simpleserializer/simpledocumentreader.o
+
+# target to build an object file
+serialize/simpleserializer/simpledocumentreader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpledocumentreader.cpp.o
+.PHONY : serialize/simpleserializer/simpledocumentreader.cpp.o
+
+serialize/simpleserializer/simpledocumentreader.i: serialize/simpleserializer/simpledocumentreader.cpp.i
+.PHONY : serialize/simpleserializer/simpledocumentreader.i
+
+# target to preprocess a source file
+serialize/simpleserializer/simpledocumentreader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpledocumentreader.cpp.i
+.PHONY : serialize/simpleserializer/simpledocumentreader.cpp.i
+
+serialize/simpleserializer/simpledocumentreader.s: serialize/simpleserializer/simpledocumentreader.cpp.s
+.PHONY : serialize/simpleserializer/simpledocumentreader.s
+
+# target to generate assembly for a file
+serialize/simpleserializer/simpledocumentreader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpledocumentreader.cpp.s
+.PHONY : serialize/simpleserializer/simpledocumentreader.cpp.s
+
+serialize/simpleserializer/simpledocumentwriter.o: serialize/simpleserializer/simpledocumentwriter.cpp.o
+.PHONY : serialize/simpleserializer/simpledocumentwriter.o
+
+# target to build an object file
+serialize/simpleserializer/simpledocumentwriter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpledocumentwriter.cpp.o
+.PHONY : serialize/simpleserializer/simpledocumentwriter.cpp.o
+
+serialize/simpleserializer/simpledocumentwriter.i: serialize/simpleserializer/simpledocumentwriter.cpp.i
+.PHONY : serialize/simpleserializer/simpledocumentwriter.i
+
+# target to preprocess a source file
+serialize/simpleserializer/simpledocumentwriter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpledocumentwriter.cpp.i
+.PHONY : serialize/simpleserializer/simpledocumentwriter.cpp.i
+
+serialize/simpleserializer/simpledocumentwriter.s: serialize/simpleserializer/simpledocumentwriter.cpp.s
+.PHONY : serialize/simpleserializer/simpledocumentwriter.s
+
+# target to generate assembly for a file
+serialize/simpleserializer/simpledocumentwriter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpledocumentwriter.cpp.s
+.PHONY : serialize/simpleserializer/simpledocumentwriter.cpp.s
+
+serialize/simpleserializer/simpleserializerfactory.o: serialize/simpleserializer/simpleserializerfactory.cpp.o
+.PHONY : serialize/simpleserializer/simpleserializerfactory.o
+
+# target to build an object file
+serialize/simpleserializer/simpleserializerfactory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpleserializerfactory.cpp.o
+.PHONY : serialize/simpleserializer/simpleserializerfactory.cpp.o
+
+serialize/simpleserializer/simpleserializerfactory.i: serialize/simpleserializer/simpleserializerfactory.cpp.i
+.PHONY : serialize/simpleserializer/simpleserializerfactory.i
+
+# target to preprocess a source file
+serialize/simpleserializer/simpleserializerfactory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpleserializerfactory.cpp.i
+.PHONY : serialize/simpleserializer/simpleserializerfactory.cpp.i
+
+serialize/simpleserializer/simpleserializerfactory.s: serialize/simpleserializer/simpleserializerfactory.cpp.s
+.PHONY : serialize/simpleserializer/simpleserializerfactory.s
+
+# target to generate assembly for a file
+serialize/simpleserializer/simpleserializerfactory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/graphicseditordemo.dir/build.make CMakeFiles/graphicseditordemo.dir/serialize/simpleserializer/simpleserializerfactory.cpp.s
+.PHONY : serialize/simpleserializer/simpleserializerfactory.cpp.s
 
 # Help Target
 help:
@@ -352,25 +664,64 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
-	@echo "... graphicseditordecl"
-	@echo "... editor.o"
-	@echo "... editor.i"
-	@echo "... editor.s"
-	@echo "... ellipse.o"
-	@echo "... ellipse.i"
-	@echo "... ellipse.s"
-	@echo "... graphicsitem.o"
-	@echo "... graphicsitem.i"
-	@echo "... graphicsitem.s"
-	@echo "... gui.o"
-	@echo "... gui.i"
-	@echo "... gui.s"
-	@echo "... line.o"
-	@echo "... line.i"
-	@echo "... line.s"
+	@echo "... graphicseditordemo"
+	@echo "... common/point.o"
+	@echo "... common/point.i"
+	@echo "... common/point.s"
+	@echo "... common/rect.o"
+	@echo "... common/rect.i"
+	@echo "... common/rect.s"
+	@echo "... common/utils.o"
+	@echo "... common/utils.i"
+	@echo "... common/utils.s"
+	@echo "... editor/editor.o"
+	@echo "... editor/editor.i"
+	@echo "... editor/editor.s"
+	@echo "... editor/ellipse.o"
+	@echo "... editor/ellipse.i"
+	@echo "... editor/ellipse.s"
+	@echo "... editor/graphicsitem.o"
+	@echo "... editor/graphicsitem.i"
+	@echo "... editor/graphicsitem.s"
+	@echo "... editor/line.o"
+	@echo "... editor/line.i"
+	@echo "... editor/line.s"
+	@echo "... editor/selectablegraphicsitem.o"
+	@echo "... editor/selectablegraphicsitem.i"
+	@echo "... editor/selectablegraphicsitem.s"
+	@echo "... editor/serializablegraphicsitem.o"
+	@echo "... editor/serializablegraphicsitem.i"
+	@echo "... editor/serializablegraphicsitem.s"
+	@echo "... gui/gui.o"
+	@echo "... gui/gui.i"
+	@echo "... gui/gui.s"
+	@echo "... gui/textmodeui/textmodecanvas.o"
+	@echo "... gui/textmodeui/textmodecanvas.i"
+	@echo "... gui/textmodeui/textmodecanvas.s"
+	@echo "... gui/textmodeui/textmodeui.o"
+	@echo "... gui/textmodeui/textmodeui.i"
+	@echo "... gui/textmodeui/textmodeui.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... serialize/documentreader.o"
+	@echo "... serialize/documentreader.i"
+	@echo "... serialize/documentreader.s"
+	@echo "... serialize/documentwriter.o"
+	@echo "... serialize/documentwriter.i"
+	@echo "... serialize/documentwriter.s"
+	@echo "... serialize/serializerfactory.o"
+	@echo "... serialize/serializerfactory.i"
+	@echo "... serialize/serializerfactory.s"
+	@echo "... serialize/simpleserializer/simpledocumentreader.o"
+	@echo "... serialize/simpleserializer/simpledocumentreader.i"
+	@echo "... serialize/simpleserializer/simpledocumentreader.s"
+	@echo "... serialize/simpleserializer/simpledocumentwriter.o"
+	@echo "... serialize/simpleserializer/simpledocumentwriter.i"
+	@echo "... serialize/simpleserializer/simpledocumentwriter.s"
+	@echo "... serialize/simpleserializer/simpleserializerfactory.o"
+	@echo "... serialize/simpleserializer/simpleserializerfactory.i"
+	@echo "... serialize/simpleserializer/simpleserializerfactory.s"
 .PHONY : help
 
 

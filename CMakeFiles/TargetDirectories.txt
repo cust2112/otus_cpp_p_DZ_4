@@ -3,7 +3,7 @@
 /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/install.dir
 /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/list_install_components.dir
 /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/rebuild_cache.dir
-/home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/graphicseditordecl.dir
+/home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/package.dir
+/home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/graphicseditordemo.dir
 /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/package_source.dir
 /home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/edit_cache.dir
-/home/runner/work/otus_cpp_p_DZ_4/otus_cpp_p_DZ_4/CMakeFiles/package.dir
