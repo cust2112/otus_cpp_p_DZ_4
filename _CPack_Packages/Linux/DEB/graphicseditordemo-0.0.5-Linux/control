@@ -4,6 +4,6 @@ Maintainer: example@example.com
 Package: graphicseditordemo
 Priority: optional
 Section: devel
-Version: 0.0.4
+Version: 0.0.5
 Installed-Size: 294
 
